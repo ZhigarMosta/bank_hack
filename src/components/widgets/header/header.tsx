@@ -61,9 +61,9 @@ export const Header = () => {
   return (
     <header className="flex items-center justify-center w-full h-36 px-5 bg-blue-500 shadow-xl">
       <div className="header-container flex items-center justify-between max-w-7xl w-full h-fit">
-        <p className="basis-1/3 text-white font-bold text-[30px]">
-          NoSkamBank Chestno
-        </p>
+        <div className="flex gap-4 basis-1/3 text-white font-bold text-[30px]">
+          NoSkamBank <div className="square">Chestno</div>
+        </div>
         {isAuthorize ? (
           <div className="flex gap-5">
             <div className="flex flex-col gap-2">

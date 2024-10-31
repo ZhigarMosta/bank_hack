@@ -18,4 +18,44 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+.square {
+  animation: rotate 2.5s linear infinite;
+  width: fit-content;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.prikol {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+#plane {
+  position: absolute;
+  right: 0;
+  animation: fly 1.5s linear infinite;
+}
+
+@keyframes fly {
+  from {
+    right: -20px;
+  }
+  to {
+    right: 20px;
+  }
 }

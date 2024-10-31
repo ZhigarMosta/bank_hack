@@ -1,14 +1,8 @@
 "use client";
 import React from "react";
-import { Button } from "@/components/shared/button";
-import { getProfile } from "@/model/user-info";
 import { $UserInfo } from "@/store/usesr-store";
 import { useUnit } from "effector-react";
-import { getAllProfile } from "@/model/all-user-info";
 import { $AllUserInfo } from "@/store/all-usesr-store";
-import { useForm } from "react-hook-form";
-import { OperationCreate } from "@/model/operation-create";
-import { findAllOperationByUserId } from "@/model/operation-getAllByUserId";
 import { $Operationsinfo } from "@/store/list-operation-store";
 
 export default function Home() {
@@ -83,7 +77,14 @@ export default function Home() {
                     <span className="text-white">Почта:</span> {user.email}
                   </p>
                   <p className="text-[#0f213e] font-semibold text-[15px]">
-                    <span className="text-white">Баланс:</span> {user.balance}
+                    <span className="text-white">Баланс:</span> {user.balance}{" "}
+                    {user.balance > 1000000 ? (
+                      <span className="text-[#360d0f]">
+                        нормальный пользователь)
+                      </span>
+                    ) : (
+                      <span className="text-[#360d0f]">какой то бомжара</span>
+                    )}
                   </p>
                 </div>
               );
